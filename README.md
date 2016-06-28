@@ -1,7 +1,8 @@
-# analise-risco
-Repo usado para documentar a cadeira de Análise de Risco
+# Análise de Risco
+Repo usado para documentar a cadeira de Análise de Risco.
 
 ## Links Úteis
+* [Página do Professor Eber](http://equipe.nce.ufrj.br/eber/)
 * [R](https://www.r-project.org/)
 * [R Studio](https://www.rstudio.com/)
 * [R programming coursera](https://pt.coursera.org/learn/r-programming)
