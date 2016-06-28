@@ -9,6 +9,7 @@ Repo usado para documentar a cadeira de Análise de Risco.
 * [Tutorial de R](http://www.tutorialspoint.com/r/)
 * [GitHub](https://github.com/)
 * [Git SCM](https://git-scm.com/)
+* <a href="google.com" target="_blank">Google</a>
 
 ## Grupos de Trabalho
 * Grupo 1
