@@ -33,12 +33,21 @@ Repo usado para documentar a cadeira de Análise de Risco.
   * 
 
 Jansen Silva Cardoso
+
 Felipe Ribeiro Pires
+
 Aurelio Santos
+
 Marcos Araújo
+
 Leonardo Mendonça Pires
+
 Anderson dos Santos Nepomuceno
+
 Wellington Scarpini
+
 Leandro Pereira
+
 André Bastos
+
 Leonardo Azevedo
