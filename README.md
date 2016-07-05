@@ -11,6 +11,7 @@ Repo usado para documentar a cadeira de Análise de Risco.
 * [Git SCM](https://git-scm.com/)
 * [Git Documentation](https://git-scm.com/book/en/v2)
 * [Teorema do Limite Central](https://pt.khanacademy.org/math/probability/statistics-inferential/sampling-distribution/v/central-limit-theorem)
+* [Probabilidade] (http://www.portalaction.com.br/probabilidades)
 
 ## Grupos de Trabalho
 * Grupo 1
