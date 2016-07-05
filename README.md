@@ -17,7 +17,7 @@ Repo usado para documentar a cadeira de Análise de Risco.
   * Eduardo Chiote
   * Stella Queiroz
 * Grupo 2
-  * 
+  * Washington Correia
   * 
   * 
   * 
@@ -33,23 +33,12 @@ Repo usado para documentar a cadeira de Análise de Risco.
   * 
 
 Jansen Silva Cardoso
-
 Felipe Ribeiro Pires
-
-Washington Correia
-
 Aurelio Santos
-
 Marcos Araújo
-
 Leonardo Mendonça Pires
-
 Anderson dos Santos Nepomuceno
-
 Wellington Scarpini
-
 Leandro Pereira
-
 André Bastos
-
 Leonardo Azevedo
