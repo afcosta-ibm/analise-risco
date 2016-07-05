@@ -53,17 +53,22 @@ André Bastos
 Leonardo Azevedo
 
 ## Comandos mais usados do Git
-iniciando os trabalhos:
-git pull
+Iniciando os trabalhos:
 
-verificando as suas alterações:
-git status
+* git pull
 
-adicionando as suas alterações ao próximo commit:
-git add .
+Verificando as suas alterações:
 
-comitando as suas alterações locais:
-git commit -a -m "comentário relevante"
+* git status
 
-enviando suas mudanças para o servidor:
-git push
+Adicionando as suas alterações ao próximo commit:
+
+* git add .
+
+Comitando as suas alterações locais:
+
+* git commit -a -m "comentário relevante"
+
+Enviando suas mudanças para o servidor:
+
+* git push
