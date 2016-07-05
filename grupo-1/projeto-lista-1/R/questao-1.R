@@ -9,7 +9,7 @@ foo <- function(throws, title, filename) {
   rounds <- 10
   x <- c(rep(0, rounds))
   for (i in 1:rounds) {
-    x[i] <- throw.coin(throws)
+    x[i] <- throw.coin(1, throws)
   }
   draw(x, title, to.file = TRUE, filename)
 }
