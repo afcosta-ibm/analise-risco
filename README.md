@@ -9,6 +9,7 @@ Repo usado para documentar a cadeira de Análise de Risco.
 * [Tutorial de R](http://www.tutorialspoint.com/r/)
 * [GitHub](https://github.com/)
 * [Git SCM](https://git-scm.com/)
+* [Git Documentation](https://git-scm.com/book/en/v2)
 * [Teorema do Limite Central](https://pt.khanacademy.org/math/probability/statistics-inferential/sampling-distribution/v/central-limit-theorem)
 
 ## Grupos de Trabalho
@@ -50,3 +51,19 @@ Wellington Scarpini
 André Bastos
 
 Leonardo Azevedo
+
+## Comandos mais usados do Git
+iniciando os trabalhos:
+git pull
+
+verificando as suas alterações:
+git status
+
+adicionando as suas alterações ao próximo commit:
+git add .
+
+comitando as suas alterações locais:
+git commit -a -m "comentário relevante"
+
+enviando suas mudanças para o servidor:
+git push
