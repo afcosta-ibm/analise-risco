@@ -9,7 +9,7 @@ Repo usado para documentar a cadeira de Análise de Risco.
 * [Tutorial de R](http://www.tutorialspoint.com/r/)
 * [GitHub](https://github.com/)
 * [Git SCM](https://git-scm.com/)
-* [Teorema Central do Limite](https://pt.khanacademy.org/math/probability/statistics-inferential/sampling-distribution/v/central-limit-theorem)
+* [Teorema do Limite Central](https://pt.khanacademy.org/math/probability/statistics-inferential/sampling-distribution/v/central-limit-theorem)
 
 ## Grupos de Trabalho
 * Grupo 1
