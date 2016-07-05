@@ -19,8 +19,8 @@ Repo usado para documentar a cadeira de Análise de Risco.
   * Stella Queiroz
 * Grupo 2
   * Washington Correia
-  * 
-  * 
+  * Anderson dos Santos Nepomuceno
+  * Leandro Pereira
   * 
 * Grupo 3
   * 
@@ -43,11 +43,9 @@ Marcos Araújo
 
 Leonardo Mendonça Pires
 
-Anderson dos Santos Nepomuceno
 
 Wellington Scarpini
 
-Leandro Pereira
 
 André Bastos
 
