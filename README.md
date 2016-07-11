@@ -23,35 +23,16 @@ Repo usado para documentar a cadeira de Análise de Risco.
   * Washington Correia
   * Anderson dos Santos Nepomuceno
   * Leandro Pereira
-  * 
 * Grupo 3
-  * 
-  * 
-  * 
-  * 
+  * Marcos Araújo
+  * Jansen Silva Cardoso
+  * Felipe Ribeiro Pires
+  * Leonardo Mendonça Pires
 * Grupo 4
-  * 
-  * 
-  * 
-  * 
-
-Jansen Silva Cardoso
-
-Felipe Ribeiro Pires
-
-Aurelio Santos
-
-Marcos Araújo
-
-Leonardo Mendonça Pires
-
-
-Wellington Scarpini
-
-
-André Bastos
-
-Leonardo Azevedo
+  * Aurelio Santos
+  * Wellington Scarpini
+  * André Bastos
+  * Leonardo Azevedo
 
 ## Comandos mais usados do Git
 Iniciando os trabalhos:
