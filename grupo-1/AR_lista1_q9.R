@@ -1,13 +1,13 @@
 #Suponha um fluxo de caixa com 20 valores, cada um deles seguindo uma triangular com valores
 
-#(8,10,12) descontados a uma taxa de 1% por período. Obtenha uma aproximação empírica para a
+#(8,10,12) descontados a uma taxa de 1% por per?odo. Obtenha uma aproxima??o emp?rica para a
 
-#distribuição de probabilidade do VPL e compare com o resultado obtido usando o TCL.
+#distribui??o de probabilidade do VPL e compare com o resultado obtido usando o TCL.
 
 #VP = soma (VFi/(1+t)^n)
 
 
-#solução por TCL: VP_total ~ Normal (soma(media), soma(variancia))
+#solu??o por TCL: VP_total ~ Normal (soma(media), soma(variancia))
 
 library (triangle)
 
@@ -43,9 +43,9 @@ variancia_total = sum(variancia)
 
 
 
-#solução empírica:
+#solu??o emp?rica:
 
-#número de simulações:
+#n?mero de simula??es:
 n = 1000
 
 VP_total = NULL
@@ -68,3 +68,13 @@ for (j in 1:n) {
 
 media_total2 = mean(VP_total)
 variancia_total2 = var(VP_total)
+
+# std<-sqrt(var(variancia_total2))
+
+h <- hist(VP_total)
+xfit <- seq(min(VP_total), max(VP_total), length = 40)
+yfit <- dnorm(xfit, mean=mean(VP_total), sd=sd(VP_total))
+yfit <- yfit * diff(h$mids[1:2])*length(VP_total)
+  
+lines(xfit, yfit, col="black", lwd=2)
+
