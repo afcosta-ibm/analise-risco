@@ -37,7 +37,7 @@ Repo usado para documentar a cadeira de Análise de Risco.
 ## Comandos mais usados do Git
 Clonando o repositorio
 
-* git clone https://<usuario>:<senha>@github.com/afcosta-ibm/analise-risco.git
+* git clone https://USUARIO:SENHA@github.com/afcosta-ibm/analise-risco.git
 
 Iniciando os trabalhos:
 
