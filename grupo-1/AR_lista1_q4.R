@@ -1,12 +1,16 @@
-#Usando simula??o, obtenha uma aproxima??o emp?rica para a distribui??o de probabilidade
-#da soma de 12 VAs uniformes 0..1.
+# Usando simulacao, obtenha uma aproximacao empirica para a distribuicao de 
+# probabilidade da soma de 12 VAs uniformes 0..1.
 
-
-#Sejam X1,...,X12 vari?veis uniforme no intervalo [0,1] e Z = X1+...+X12.
+#Sejam X1,...,X12 variaveis uniforme no intervalo [0,1] e Z = X1+...+X12.
 
 for (i in 1:1000) {
- X <- runif(12,0,1)
- Z[i] <- sum(X)
+  X = runif(12,0,1)
+  Z[i] = sum(X)
 }
 
-hist(Z)
+h <- hist(Z)
+xfit <- seq(min(Z), max(Z), length = 40)
+yfit <- dnorm(xfit, mean=mean(Z), sd=sd(Z))
+yfit <- yfit * diff(h$mids[1:2])*length(Z)
+
+lines(xfit, yfit, col="black", lwd=2)
