@@ -5,7 +5,7 @@
 Z <- NULL
 
 for (i in 1:1000) {
-  X = runif(12,0,1)
+  X <- runif(12,0,1)
   Z[i] <- sum(X)
 }
 
