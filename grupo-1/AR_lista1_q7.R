@@ -1,19 +1,19 @@
-#Usando simulação, obtenha uma aproximação empírica para o produto de duas VAs
-#com distribuição normal com média =0 e variância =1.
+#Usando simula??o, obtenha uma aproxima??o emp?rica para o produto de duas VAs
+#com distribui??o normal com m?dia <-0 e vari?ncia <-1.
 
 
 
-X = NULL
-Y = NULL
-Z = NULL
+X <- NULL
+Y <- NULL
+Z <- NULL
 for (i in 1:1000) {
  
-    X[i] = rnorm(1)
-    Y[i] = rnorm(1)
-    Z[i] = X[i] * Y[i]
+    X[i] <- rnorm(1)
+    Y[i] <- rnorm(1)
+    Z[i] <- X[i] * Y[i]
     
 }
 
-media3 = mean(Z)
-variancia3 = var (Z)
+media3 <- mean(Z)
+variancia3 <- var (Z)
 hist(Z)
