@@ -3,7 +3,6 @@
 
 
 #Sejam X1,...,X12 vari?veis uniforme no intervalo [0,1] e Z = X1+...+X12.
-y <- 1:1000
 
 for (i in 1:1000) {
  X <- runif(12,0,1)
