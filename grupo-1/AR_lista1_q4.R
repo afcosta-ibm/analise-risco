@@ -4,8 +4,8 @@
 #Sejam X1,...,X12 variaveis uniforme no intervalo [0,1] e Z = X1+...+X12.
 
 for (i in 1:1000) {
-  X = runif(12,0,1)
-  Z[i] = sum(X)
+  X <- runif(12,0,1)
+  Z[i] <- sum(X)
 }
 
 h <- hist(Z)
