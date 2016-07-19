@@ -1,0 +1,13 @@
+taxi3<-function(){
+  meanc<-(40+48+60)/3
+  meanp<-(3.1+4+3.8)/3
+  varc<-(40^2+48^2+60^2-40*48-40*60-48*60)/18
+  varp<-(3.1^2+4^2+3.8^2-3.1*4-3.1*3.8-3.8*4)/18
+  mg<-meanc*meanp
+  varg<-meanp^2*varc+meanc^2*varp
+  m20<-20*mg
+  var20<-20*varg
+  dp20<-var20^0.5
+  r<-list(m20,dp20)
+  r
+}
