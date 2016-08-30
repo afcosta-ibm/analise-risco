@@ -1,0 +1,6 @@
+library(igraph)
+g=c(1,2,1,3,2,4,3,4,4,6,3,5,5,7,6,7)
+x=make_graph(g)
+plot(x)
+path=all_simple_paths(x,from=1,to=7)
+list(path)
