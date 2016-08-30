@@ -69,5 +69,10 @@
 #' de (0.5,1,1.5) semanas.
 #' 
 
+library(triangle)
 
+predio.Custo.Prazo <- predio_custo_prazo <- predioCustoPrazo <- function(){
+  
+  print(' lista 6 ')
 
+}
