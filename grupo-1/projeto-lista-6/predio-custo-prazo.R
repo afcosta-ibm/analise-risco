@@ -70,9 +70,10 @@
 #' 
 
 library(triangle)
+library(igraph)
 
 predio.Custo.Prazo <- predio_custo_prazo <- predioCustoPrazo <- function(){
   
   print(' lista 6 ')
-
+  
 }
