@@ -59,7 +59,7 @@ calcular.envoltoria <- calcular_envoltoria <-
     # Entretanto como esta empresa foi comprada por uma empresa maior, existe 
     # uma chance de 10% que o novo dono não aceite o contrato. 
     vetor.unitario <- rep(times=numberOfSamples, x=1)
-    empresa1 <- rbinom(n=numberOfSamples, 1, 0.5)
+    empresa1 <- rbinom(n=numberOfSamples, 1, 0.9)
     empresa2 <- vetor.unitario - empresa1
 
     # Neste caso, a solução alternativa é utilizar uma segunda empresa 
@@ -89,10 +89,10 @@ calcular.envoltoria <- calcular_envoltoria <-
     
     prazo <- prazo.piso + prazo.espera
     
-    result <- list(custo.material=custo.material.piso,
-                   custo.mao.de.obra=custo.mao.de.obra.piso,
-                   prazo=prazo)
+    custo <- custo.material.piso + custo.mao.de.obra.piso
     
-    return (result)
+    result <- list(custo=custo, prazo=prazo)
+    
+    return (result)  
     
 }

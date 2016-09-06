@@ -46,19 +46,26 @@ calcular.estrutura <- calcular_estrutura <- calcularEstrutura <- function(number
   telhado.prazo <- rtriangle(n=numberOfSamples, a=7, b=10, c=8)
   telhado.mao.de.obra <- rep(times=numberOfSamples, x=172000)
 
-  result <- list(espera.prazo=espera.prazo, 
-                 piso1.prazo=piso1.prazo,
-                 piso1.mao.de.obra=piso1.mao.de.obra,
-                 piso1.material=piso1.material,
-                 piso2.prazo=piso1.prazo,
-                 piso2.mao.de.obra=piso1.mao.de.obra,
-                 piso2.material=piso1.material,
-                 piso3.prazo=piso1.prazo,
-                 piso3.mao.de.obra=piso1.mao.de.obra,
-                 piso3.material=piso1.material,
-                 telhado.prazo=telhado.prazo,
-                 telhado.mao.de.obra=telhado.mao.de.obra)
+  prazo <- espera.prazo + 
+    piso1.prazo + 
+    piso2.prazo + 
+    piso3.prazo + 
+    telhado.prazo
+    
+  custo.material <- 
+    piso1.material + 
+    piso2.material + 
+    piso3.material
   
-  return (result)
+  custo.mao.de.obra <- 
+    piso1.mao.de.obra + 
+    piso2.mao.de.obra + 
+    piso3.mao.de.obra + 
+    telhado.mao.de.obra
   
+  custo <- custo.material + custo.mao.de.obra
+
+  result <- list(custo=custo, prazo=prazo)
+  
+  return (result)  
 }
