@@ -2,7 +2,7 @@
 #' Gere amostras de tamanho 1000 de uma normal (0,1). Construa um gráfico 
 #' mostrando a convergência da média e da variância com o tamanho da amostra.
 
-NumberOfSamples <- 20
+NumberOfSamples <- 1000
 
 # vetor com as amostras
 x <- rnorm(NumberOfSamples)
@@ -15,7 +15,7 @@ for (i in 1:NumberOfSamples) {
   vm[i] <- sd(x[1:i])
 }
 
-#plot(vm, type = "l")
+plot(vm, type = "l")
 
 #' Como gerar a ecdf(x):
 #' 1 - gere x[1:N] amostras de uma VA
@@ -23,8 +23,11 @@ for (i in 1:NumberOfSamples) {
 #' 3 - construa um vetor y tqy[i] = i/N
 #' 4 - y é a ecdf(x)
 
-xOrdenado <- sort(x)
+# vetor com as amostras
+x <- rnorm(NumberOfSamples)
 
-probCumulativa <- vector(length = NumberOfSamples)
+xOrd <- sort(x)
+ecds <- 1:NumberOfSamples/NumberOfSamples
 
-probCumulativa
+plot(xOrd, ecds, type = "l")
+

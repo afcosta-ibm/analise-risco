@@ -49,8 +49,7 @@ predio.secao.1 <- predio_secao_1 <- predioSecao1 <- function(){
       # custo de 160.000 + 12.000 por semana do CenariosRetrabalho[i]
       # nao foi levado em consideracao o quebrado das semanas
       # usamos o floor(x)
-      custosSecao1[i] <- 160000 + (12000 * floor(CenariosRetrabalho[i]))
-      # custosSecao1[i] <- 160000 + (12000 * CenariosRetrabalho[i])
+      custosSecao1[i] <- 160000 + (12000 * CenariosRetrabalho[i])
     }
   }
   
