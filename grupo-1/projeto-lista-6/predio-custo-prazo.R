@@ -70,7 +70,7 @@
 #' 
 
 library(triangle)
-library(igraph)
+# library(igraph)
 
 predio.Custo.Prazo <- predio_custo_prazo <- predioCustoPrazo <- function(){
   
