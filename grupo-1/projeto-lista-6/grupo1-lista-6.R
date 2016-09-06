@@ -11,6 +11,10 @@ source("grupo-1/projeto-lista-6/predio-secao-1.R")
 source("grupo-1/projeto-lista-6/predio-secao-2.R")
 source("grupo-1/projeto-lista-6/predio-secao-3.R")
 source("grupo-1/projeto-lista-6/predio-custo-prazo.R")
+source("grupo-1/projeto-lista-6/calcular-estrutura.R")
+source("grupo-1/projeto-lista-6/calcular-envoltoria.R")
+source("grupo-1/projeto-lista-6/calcular-servico-acabamento.R")
+source("grupo-1/projeto-lista-6/calcular-finalizacao.R")
 
 #'-------------------------------------------------------------------------
 
@@ -60,3 +64,31 @@ hist(secao3.prazos, main="Seção 3 Prazos - Prédio", xlab = "Duração em mese
 hist(secao3.custos, main="Seção 3 Custos - Prédio", xlab = "Custo em US$",
      ylab = "Frequência")
 
+#'-------------------------------------------------------------------------
+# calculo da estrutura
+estrutura <- calcularEstrutura(numberOfSamples=3000)
+hist(estrutura[["prazo"]], main="Estrutura - Prazos - Prédio", xlab = "Duração em meses",
+     ylab = "Frequência")
+hist(estrutura[["custo"]], main="Estrutura - Custos - Prédio", xlab = "Custo em US$",
+     ylab = "Frequência")
+#'-------------------------------------------------------------------------
+# calculo da envoltoria
+envoltoria <- calcularEnvoltoria(numberOfSamples=3000)
+hist(envoltoria[["prazo"]], main="Envoltoria - Prazos - Prédio", xlab = "Duração em meses",
+     ylab = "Frequência")
+hist(envoltoria[["custo"]], main="Envoltoria - Custos - Prédio", xlab = "Custo em US$",
+     ylab = "Frequência")
+#'-------------------------------------------------------------------------
+# calculo do servico de acabamento
+servico.acabamento <- calcularServicoAcabamento(numberOfSamples=3000)
+hist(servico.acabamento[["prazo"]], main="Servico Acabamento - Prazos - Prédio", xlab = "Duração em meses",
+     ylab = "Frequência")
+hist(servico.acabamento[["custo"]], main="Servico Acabamento - Custos - Prédio", xlab = "Custo em US$",
+     ylab = "Frequência")
+#'-------------------------------------------------------------------------
+# calculo da finalizacao
+finalizacao <- calcularFinalizacao(numberOfSamples=3000)
+hist(finalizacao[["prazo"]], main="Finalizacao - Prazos - Prédio", xlab = "Duração em meses",
+     ylab = "Frequência")
+hist(finalizacao[["custo"]], main="Finalizacao - Custos - Prédio", xlab = "Custo em US$",
+     ylab = "Frequência")
