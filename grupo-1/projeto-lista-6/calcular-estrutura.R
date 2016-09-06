@@ -31,33 +31,33 @@ calcular.estrutura <- calcular_estrutura <- calcularEstrutura <- function(number
   # detalhado. 
   
   piso1.prazo <- rtriangle(n=numberOfSamples, a=4, b=6, c=4.5)
-  piso1.custo <- rtriangle(n=numberOfSamples, a=4700, b=5200, c=5000)
+  piso1.mao.de.obra <- rtriangle(n=numberOfSamples, a=4700, b=5200, c=5000)
   piso1.material <- rtriangle(n=numberOfSamples, a=17200, b=18000, c=17500)
   
   piso2.prazo <- rtriangle(n=numberOfSamples, a=4, b=6, c=4.5)
-  piso2.custo <- rtriangle(n=numberOfSamples, a=4700, b=5200, c=5000)
+  piso2.mao.de.obra <- rtriangle(n=numberOfSamples, a=4700, b=5200, c=5000)
   piso2.material <- rtriangle(n=numberOfSamples, a=17200, b=18000, c=17500)
   
   piso3.prazo <- rtriangle(n=numberOfSamples, a=4, b=6, c=4.5)
-  piso3.custo <- rtriangle(n=numberOfSamples, a=4700, b=5200, c=5000)
+  piso3.mao.de.obra <- rtriangle(n=numberOfSamples, a=4700, b=5200, c=5000)
   piso3.material <- rtriangle(n=numberOfSamples, a=17200, b=18000, c=17500)
   
   # O telhado tomará (7,8,10) semanas por um preço fixo de 172.000.
   telhado.prazo <- rtriangle(n=numberOfSamples, a=7, b=10, c=8)
-  telhado.custo <- rep(times=numberOfSamples, x=172000)
+  telhado.mao.de.obra <- rep(times=numberOfSamples, x=172000)
 
   result <- list(espera.prazo=espera.prazo, 
                  piso1.prazo=piso1.prazo,
-                 piso1.custo=piso1.custo,
+                 piso1.mao.de.obra=piso1.mao.de.obra,
                  piso1.material=piso1.material,
                  piso2.prazo=piso1.prazo,
-                 piso2.custo=piso1.custo,
+                 piso2.mao.de.obra=piso1.mao.de.obra,
                  piso2.material=piso1.material,
                  piso3.prazo=piso1.prazo,
-                 piso3.custo=piso1.custo,
+                 piso3.mao.de.obra=piso1.mao.de.obra,
                  piso3.material=piso1.material,
                  telhado.prazo=telhado.prazo,
-                 telhado.custo=telhado.custo)
+                 telhado.mao.de.obra=telhado.mao.de.obra)
   
   return (result)
   
