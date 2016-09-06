@@ -12,7 +12,7 @@
 #' qualquer tipo de retrabalho.
 
 library(triangle)
-library(igraph)
+# library(igraph)
 
 predio.secao.1 <- predio_secao_1 <- predioSecao1 <- function(){
   
