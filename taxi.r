@@ -1,4 +1,4 @@
-taxi<-function(){
+taxi3<-function(){
   library (triangle)
   
   #simulando 20 taxis
