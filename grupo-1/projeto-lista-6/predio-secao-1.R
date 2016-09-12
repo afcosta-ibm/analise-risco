@@ -14,12 +14,10 @@
 library(triangle)
 # library(igraph)
 
-predio.secao.1 <- predio_secao_1 <- predioSecao1 <- function(){
+predio.secao.1 <- predio_secao_1 <- predioSecao1 <- 
+  function(NumberOfSamples = 3000){
   
-  print(' calculando a secao 1 do predio ')
-  
-  # number of samples
-  NumberOfSamples <- 3000
+  print(' calculando a secao 1 do predio :: Projeto ')
   
   # prazos para a secao 1 do predio
   prazosSecao1 <- vector(length = NumberOfSamples)
@@ -54,7 +52,8 @@ predio.secao.1 <- predio_secao_1 <- predioSecao1 <- function(){
   }
   
   # lista com os prazos e custos da secao 1
-  lista.secao.1 <- list(prazos = prazosSecao1, custos = custosSecao1)
+  lista.secao.1 <- list(prazos = prazosSecao1, custos = custosSecao1, 
+                        eventos = sorteioEventoRetrabalho)
   
   return (lista.secao.1)
 

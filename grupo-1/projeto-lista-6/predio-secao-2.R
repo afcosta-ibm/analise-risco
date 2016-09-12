@@ -16,12 +16,10 @@
 
 library(triangle)
 
-predio.secao.2 <- predio_secao_2 <- predioSecao2 <- function(){
+predio.secao.2 <- predio_secao_2 <- predioSecao2 <- 
+  function(NumberOfSamples = 3000){
   
-  print(' calculando a secao 2 do predio ')
-  
-  # number of samples
-  NumberOfSamples <- 3000
+  print(' calculando a secao 2 do predio :: Terraplanagem ')
   
   # prazos para a secao 2 do predio
   prazosSecao2 <- vector(length = NumberOfSamples)
@@ -62,7 +60,8 @@ predio.secao.2 <- predio_secao_2 <- predioSecao2 <- function(){
   }
   
   # lista com os prazos e custos da secao 2
-  lista.secao.2 <- list(prazos = prazosSecao2, custos = custosSecao2)
+  lista.secao.2 <- list(prazos = prazosSecao2, custos = custosSecao2, 
+                        eventos = sorteioEventoInspecaoArqueologica)
   
   return (lista.secao.2)
 

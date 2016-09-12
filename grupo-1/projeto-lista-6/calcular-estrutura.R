@@ -17,9 +17,10 @@
 
 library(triangle)
 
-calcular.estrutura <- calcular_estrutura <- calcularEstrutura <- function(numberOfSamples){
+calcular.estrutura <- calcular_estrutura <- calcularEstrutura <- 
+  function(numberOfSamples){
   
-  print('Calculo da estrutura do predio')
+  print(' Calculo da estrutura do predio :: secao 4 ')
 
   # Os componentes estruturais do prédio (pisos, pilares, cobertura) podem ser
   # iniciados, dependendo do tempo (3, 4, 6) semanas após o término do trabalho 
@@ -65,7 +66,7 @@ calcular.estrutura <- calcular_estrutura <- calcularEstrutura <- function(number
   
   custo <- custo.material + custo.mao.de.obra
 
-  result <- list(custo=custo, prazo=prazo)
+  result <- list(custos=custo, prazos=prazo)
   
   return (result)  
 }

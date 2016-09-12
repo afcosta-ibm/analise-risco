@@ -29,7 +29,7 @@ library(triangle)
 calcular.envoltoria <- calcular_envoltoria <- 
   calcularEnvoltoria <- function(numberOfSamples){
 
-    print('Calculo da envoltoria do predio')
+    print(' Calculo da envoltoria do predio :: secao 5 ')
     
     # O trabalho na envoltória (paredes, janelas e portas externas) só pode ser 
     # iniciado 3 semanas depois do primeiro piso ter sido terminado. 
@@ -91,7 +91,8 @@ calcular.envoltoria <- calcular_envoltoria <-
     
     custo <- custo.material.piso + custo.mao.de.obra.piso
     
-    result <- list(custo=custo, prazo=prazo)
+    #TODO:  confirmar se o array de eventos eh o empresa2 mesmo
+    result <- list(custos=custo, prazos=prazo, eventos = empresa2)
     
     return (result)  
     

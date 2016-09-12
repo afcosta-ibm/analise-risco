@@ -72,7 +72,72 @@
 library(triangle)
 # library(igraph)
 
-predio.Custo.Prazo <- predio_custo_prazo <- predioCustoPrazo <- function(){
+# importa as funcoes necessarias
+source("grupo-1/projeto-lista-6/predio-secao-1.R")
+source("grupo-1/projeto-lista-6/predio-secao-2.R")
+source("grupo-1/projeto-lista-6/predio-secao-3.R")
+source("grupo-1/projeto-lista-6/calcular-estrutura.R")
+source("grupo-1/projeto-lista-6/calcular-envoltoria.R")
+source("grupo-1/projeto-lista-6/calcular-servico-acabamento.R")
+source("grupo-1/projeto-lista-6/calcular-finalizacao.R")
+
+predio.Custo.Prazo <- predio_custo_prazo <- predioCustoPrazo <- 
+  function(NumberOfSamples = 3000){
+    
+  print(NumberOfSamples)
   
-  print(' lista 6 ')
+  print(' montando os dados de custo, prazo e eventos da lista 6 ')
+  # dimnames(sdsd) = list(1:3000, c("col1", "col2"))
+  
+  colunasMatriz <- c("projeto.custos", "projeto.prazos", 
+                     "terraplanagem.custos", "terraplanagem.prazos",
+                     "fundacoes.custos", "fundacoes.prazos",
+                     "estrutura.custos", "estrutura.prazos",
+                     "envoltoria.custos", "envoltoria.prazos",
+                     "servico.acabamento.custos", "servico.acabamento.prazos",
+                     "finalizacao.custos", "finalizacao.prazos")
+    
+  matrizCenarios <- matrix(nrow=14, ncol=NumberOfSamples, 
+                           dimnames = list(colunasMatriz, 1:NumberOfSamples))
+  
+  # dimnames(matrizCenarios) = list(colunasMatriz, 1:NumberOfSamples)
+  
+
+  # calcula os dados da secao 1 :: Projeto
+  secao1 <- predioSecao1(NumberOfSamples)
+  matrizCenarios[1,] <- secao1[["custos"]]
+  matrizCenarios[2,] <- secao1[["prazos"]]
+  
+  # calcula os dados da secao 2 :: Terraplanagem
+  secao2 <- predioSecao2(NumberOfSamples)
+  matrizCenarios[3,] <- secao2[["custos"]] 
+  matrizCenarios[4,] <- secao2[["prazos"]] 
+  
+  # calcula os dados da secao 3 :: Fundacoes
+  secao3 <- predioSecao3(NumberOfSamples)
+  matrizCenarios[5,] <- secao3[["custos"]] 
+  matrizCenarios[6,] <- secao3[["prazos"]] 
+  
+  # calcula os dados da secao 4 :: Estruturas
+  secao4 <- calcularEstrutura(NumberOfSamples)
+  matrizCenarios[7,] <- secao4[["custos"]] 
+  matrizCenarios[8,] <- secao4[["prazos"]]
+  
+  # calcula os dados da secao 5 :: Envoltorias
+  secao5 <- calcularEnvoltoria(NumberOfSamples)
+  matrizCenarios[9,] <- secao5[["custos"]] 
+  matrizCenarios[10,] <- secao5[["prazos"]]
+  
+  # calcula os dados da secao 6 :: Servicos e Acabamento
+  secao6 <- calcularServicoAcabamento(NumberOfSamples)
+  matrizCenarios[11,] <- secao6[["custos"]] 
+  matrizCenarios[12,] <- secao6[["prazos"]]
+  
+  # calcula os dados da secao 7 :: Finalizacao
+  secao7 <- calcularFinalizacao(NumberOfSamples)
+  matrizCenarios[13,] <- secao7[["custos"]] 
+  matrizCenarios[14,] <- secao7[["prazos"]]
+  
+  return (matrizCenarios)
+  
 }

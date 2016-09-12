@@ -11,12 +11,10 @@
 
 library(triangle)
 
-predio.secao.3 <- predio_secao_3 <- predioSecao3 <- function(){
+predio.secao.3 <- predio_secao_3 <- predioSecao3 <- 
+  function(NumberOfSamples = 3000){
   
-  print(' calculando a secao 3 do predio ')
-  
-  # number of samples
-  NumberOfSamples <- 3000
+  print(' calculando a secao 3 do predio :: Fundacoes ')
   
   # prazos para a secao 3 do predio
   prazosSecao3 <- vector(length = NumberOfSamples)
