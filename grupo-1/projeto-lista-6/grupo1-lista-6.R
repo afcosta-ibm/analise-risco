@@ -11,7 +11,10 @@ source("grupo-1/projeto-lista-6/predio-custo-prazo.R")
 
 #'-------------------------------------------------------------------------
 
-matrizCenarios <- predioCustoPrazo(3000)
+listaMatrizes <- predioCustoPrazo(3000)
+
+matrizCenarios <- listaMatrizes[["cenarios"]]
+matrizEventos <- listaMatrizes[["eventos"]]
 
 # plota o histograma dos prazos da secao 1
 hist(matrizCenarios["projeto.prazos",], main="Seção 1 Prazos - Prédio", 

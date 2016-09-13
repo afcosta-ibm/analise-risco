@@ -38,8 +38,7 @@ calcular.finalizacao <- calcular_finalizacao <-
     prazo.adicional1.ajustado + 
     prazo.adicional2.ajustado
   
-  result <- list(custos=custo, prazos=prazo, eventos1 = fator1, 
-                 eventos2 = fator2)
+  result <- list(custos=custo, prazos=prazo, eventos1=fator1, eventos2=fator2)
 
   return (result)
 }
