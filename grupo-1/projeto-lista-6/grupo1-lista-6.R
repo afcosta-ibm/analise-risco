@@ -13,9 +13,13 @@ source("grupo-1/projeto-lista-6/predio-custo-prazo.R")
 
 listaMatrizes <- predioCustoPrazo(3000)
 
+
 matrizCustos <- listaMatrizes[["custos"]]
 matrizPrazos <- listaMatrizes[["prazos"]]
 matrizEventos <- listaMatrizes[["eventos"]]
+
+somaCustos <- colSums(matrizCustos)
+somaPrazos <- colSums(matrizPrazos)
 
 # plota o histograma dos prazos da secao 1
 hist(matrizPrazos["projeto.prazos",], main="Seção 1 Prazos - Prédio", 
