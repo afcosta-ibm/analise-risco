@@ -88,74 +88,84 @@ predio.Custo.Prazo <- predio_custo_prazo <- predioCustoPrazo <-
   
   print(' montando os dados de custo, prazo e eventos da lista 6 ')
 
-  # monta as colunas da matriz com os nomes corretos
-  colunasMatriz <- c("projeto.custos", "projeto.prazos", 
-                     "terraplanagem.custos", "terraplanagem.prazos",
-                     "fundacoes.custos", "fundacoes.prazos",
-                     "estrutura.custos", "estrutura.prazos",
-                     "envoltoria.custos", "envoltoria.prazos",
-                     "servico.acabamento.custos", "servico.acabamento.prazos",
-                     "finalizacao.custos", "finalizacao.prazos")
+  # monta as linhas da matriz com os nomes corretos
+  linhasMatrizCusto <- c("projeto.custos", "terraplanagem.custos",
+                         "fundacoes.custos", "estrutura.custos", 
+                         "envoltoria.custos", "servico.acabamento.custos",
+                         "finalizacao.custos")
   
-  # inicializa a matriz
-  matrizCenarios <- matrix(nrow=14, ncol=NumberOfSamples, 
-                           dimnames = list(colunasMatriz, 1:NumberOfSamples))
+  # inicializa a matriz de custos
+  matrizCustos <- matrix(nrow=7, ncol=NumberOfSamples,
+                         dimnames = list(linhasMatrizCusto, 1:NumberOfSamples))
+  
+
+  # monta as linhas da matriz com os nomes corretos
+  linhasMatrizPrazo <- c("projeto.prazos", "terraplanagem.prazos",
+                         "fundacoes.prazos", "estrutura.prazos",
+                         "envoltoria.prazos", "servico.acabamento.prazos",
+                         "finalizacao.prazos")
+  
+  # inicializa a matriz de prazos
+  matrizPrazos <- matrix(nrow=7, ncol=NumberOfSamples,
+                         dimnames = list(linhasMatrizPrazo, 1:NumberOfSamples))
+  
   
   # monta as colunas da matriz de eventos com os nomes corretos
-  colunasMatrizEventos <- c("projeto.eventos", "terraplanagem.eventos", 
-                            "envoltoria.eventos", "servico.acabamento.eventos",
-                     "finalizacao.eventos.1", "finalizacao.eventos.2")
+  linhasMatrizEventos <- c("projeto.eventos", "terraplanagem.eventos",
+                           "envoltoria.eventos", "servico.acabamento.eventos",
+                           "finalizacao.eventos.1", "finalizacao.eventos.2")
   
   # inicializa a matriz de eventos
   matrizEventos <- matrix(nrow=6, ncol=NumberOfSamples, 
-                           dimnames = list(colunasMatrizEventos, 
-                                           1:NumberOfSamples))
+                          dimnames = list(linhasMatrizEventos, 
+                                          1:NumberOfSamples))
 
   # calcula os dados da secao 1 :: Projeto
   secao1 <- predioSecao1(NumberOfSamples)
-  matrizCenarios[1,] <- secao1[["custos"]]
-  matrizCenarios[2,] <- secao1[["prazos"]]
+  matrizCustos[1,] <- secao1[["custos"]]
+  matrizPrazos[1,] <- secao1[["prazos"]]
   matrizEventos[1,] <- secao1[["eventos"]]
   
   # calcula os dados da secao 2 :: Terraplanagem
   secao2 <- predioSecao2(NumberOfSamples)
-  matrizCenarios[3,] <- secao2[["custos"]] 
-  matrizCenarios[4,] <- secao2[["prazos"]] 
+  matrizCustos[2,] <- secao2[["custos"]] 
+  matrizPrazos[2,] <- secao2[["prazos"]] 
   matrizEventos[2,] <- secao2[["eventos"]]
   
   # calcula os dados da secao 3 :: Fundacoes
   secao3 <- predioSecao3(NumberOfSamples)
-  matrizCenarios[5,] <- secao3[["custos"]] 
-  matrizCenarios[6,] <- secao3[["prazos"]] 
+  matrizCustos[3,] <- secao3[["custos"]] 
+  matrizPrazos[3,] <- secao3[["prazos"]] 
   
   # calcula os dados da secao 4 :: Estruturas
   secao4 <- calcularEstrutura(NumberOfSamples)
-  matrizCenarios[7,] <- secao4[["custos"]] 
-  matrizCenarios[8,] <- secao4[["prazos"]]
+  matrizCustos[4,] <- secao4[["custos"]] 
+  matrizPrazos[4,] <- secao4[["prazos"]]
   
   # calcula os dados da secao 5 :: Envoltorias
   secao5 <- calcularEnvoltoria(NumberOfSamples)
-  matrizCenarios[9,] <- secao5[["custos"]] 
-  matrizCenarios[10,] <- secao5[["prazos"]]
+  matrizCustos[5,] <- secao5[["custos"]] 
+  matrizPrazos[5,] <- secao5[["prazos"]]
   matrizEventos[3,] <- secao5[["eventos"]]
   
   
   # calcula os dados da secao 6 :: Servicos e Acabamento
   secao6 <- calcularServicoAcabamento(NumberOfSamples)
-  matrizCenarios[11,] <- secao6[["custos"]] 
-  matrizCenarios[12,] <- secao6[["prazos"]]
+  matrizCustos[6,] <- secao6[["custos"]] 
+  matrizPrazos[6,] <- secao6[["prazos"]]
   matrizEventos[4,] <- secao6[["eventos"]]
   
   # calcula os dados da secao 7 :: Finalizacao
   secao7 <- calcularFinalizacao(NumberOfSamples)
-  matrizCenarios[13,] <- secao7[["custos"]] 
-  matrizCenarios[14,] <- secao7[["prazos"]]
+  matrizCustos[7,] <- secao7[["custos"]] 
+  matrizPrazos[7,] <- secao7[["prazos"]]
   matrizEventos[5,] <- secao7[["eventos1"]]
   matrizEventos[6,] <- secao7[["eventos2"]]
   
 
   # lista com os prazos e custos da secao 1
-  lista.matrizes <- list(cenarios=matrizCenarios, eventos=matrizEventos)
+  lista.matrizes <- list(custos=matrizCustos, prazos=matrizPrazos, 
+                         eventos=matrizEventos)
   
   return (lista.matrizes)
   

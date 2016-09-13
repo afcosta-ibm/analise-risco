@@ -13,16 +13,17 @@ source("grupo-1/projeto-lista-6/predio-custo-prazo.R")
 
 listaMatrizes <- predioCustoPrazo(3000)
 
-matrizCenarios <- listaMatrizes[["cenarios"]]
+matrizCustos <- listaMatrizes[["custos"]]
+matrizPrazos <- listaMatrizes[["prazos"]]
 matrizEventos <- listaMatrizes[["eventos"]]
 
 # plota o histograma dos prazos da secao 1
-hist(matrizCenarios["projeto.prazos",], main="Seção 1 Prazos - Prédio", 
+hist(matrizPrazos["projeto.prazos",], main="Seção 1 Prazos - Prédio", 
      xlab = "Duração em meses",
      ylab = "Frequência")
 
 # plota o histograma dos prazos da secao 1
-hist(matrizCenarios["projeto.custos",], main="Seção 1 Custos - Prédio", 
+hist(matrizCustos["projeto.custos",], main="Seção 1 Custos - Prédio", 
      xlab = "Custo em US$",
      ylab = "Frequência")
 
@@ -30,13 +31,13 @@ hist(matrizCenarios["projeto.custos",], main="Seção 1 Custos - Prédio",
 percentuais <- (seq(0,1,by=0.05))
 
 # cria a distribuicao dos tempos nas faixas de percentuais
-distribuicao <- quantile(matrizCenarios["projeto.prazos",], probs=percentuais)
+distribuicao <- quantile(matrizPrazos["projeto.prazos",], probs=percentuais)
 
 # imprime os tempos nas faixas de percentuais
 # print(distribuicao)
 
 # pega o valor o orcamento aprovado
-prazoMedio <- round(mean(matrizCenarios["projeto.prazos",]), 2)
+prazoMedio <- round(mean(matrizPrazos["projeto.prazos",]), 2)
 
 textoPrazoMedio <- paste("Duração em meses - Prazo Médio:", prazoMedio)
 
@@ -84,56 +85,56 @@ text(matrizDistribuicaoPercentuais[15,1], matrizDistribuicaoPercentuais[12,2],
 #'-------------------------------------------------------------------------
 
 # plota o histograma dos prazos da secao 2
-hist(matrizCenarios["terraplanagem.prazos",], main="Seção 2 Prazos - Prédio", 
+hist(matrizPrazos["terraplanagem.prazos",], main="Seção 2 Prazos - Prédio", 
      xlab = "Duração em meses",
      ylab = "Frequência")
 
 # plota o histograma dos prazos da secao 2
-hist(matrizCenarios["terraplanagem.custos",], main="Seção 2 Custos - Prédio", 
+hist(matrizCustos["terraplanagem.custos",], main="Seção 2 Custos - Prédio", 
      xlab = "Custo em US$",
      ylab = "Frequência")
 
 #'-------------------------------------------------------------------------
 
 # plota o histograma dos prazos da secao 3
-hist(matrizCenarios["fundacoes.prazos",], main="Seção 3 Prazos - Prédio", 
+hist(matrizPrazos["fundacoes.prazos",], main="Seção 3 Prazos - Prédio", 
      xlab = "Duração em meses",
      ylab = "Frequência")
 
 # plota o histograma dos prazos da secao 3
-hist(matrizCenarios["fundacoes.custos",], main="Seção 3 Custos - Prédio", 
+hist(matrizCustos["fundacoes.custos",], main="Seção 3 Custos - Prédio", 
      xlab = "Custo em US$",
      ylab = "Frequência")
 
 #'-------------------------------------------------------------------------
 # calculo da estrutura
-hist(matrizCenarios["estrutura.prazos",], 
+hist(matrizPrazos["estrutura.prazos",], 
      main="Estrutura - Prazos - Prédio", xlab = "Duração em meses",
      ylab = "Frequência")
-hist(matrizCenarios["estrutura.custos",], 
+hist(matrizCustos["estrutura.custos",], 
      main="Estrutura - Custos - Prédio", xlab = "Custo em US$",
      ylab = "Frequência")
 #'-------------------------------------------------------------------------
 # calculo da envoltoria
-hist(matrizCenarios["envoltoria.prazos",], 
+hist(matrizPrazos["envoltoria.prazos",], 
      main="Envoltoria - Prazos - Prédio", xlab = "Duração em meses",
      ylab = "Frequência")
-hist(matrizCenarios["envoltoria.custos",], 
+hist(matrizCustos["envoltoria.custos",], 
      main="Envoltoria - Custos - Prédio", xlab = "Custo em US$",
      ylab = "Frequência")
 #'-------------------------------------------------------------------------
 # calculo do servico de acabamento
-hist(matrizCenarios["servico.acabamento.prazos",], 
+hist(matrizPrazos["servico.acabamento.prazos",], 
      main="Servico Acabamento - Prazos - Prédio", xlab = "Duração em meses",
      ylab = "Frequência")
-hist(matrizCenarios["servico.acabamento.custos",], 
+hist(matrizCustos["servico.acabamento.custos",], 
      main="Servico Acabamento - Custos - Prédio", xlab = "Custo em US$",
      ylab = "Frequência")
 #'-------------------------------------------------------------------------
 # calculo da finalizacao
-hist(matrizCenarios["finalizacao.prazos",], 
+hist(matrizPrazos["finalizacao.prazos",], 
      main="Finalizacao - Prazos - Prédio", xlab = "Duração em meses",
      ylab = "Frequência")
-hist(matrizCenarios["finalizacao.custos",], 
+hist(matrizCustos["finalizacao.custos",], 
      main="Finalizacao - Custos - Prédio", xlab = "Custo em US$",
      ylab = "Frequência")
