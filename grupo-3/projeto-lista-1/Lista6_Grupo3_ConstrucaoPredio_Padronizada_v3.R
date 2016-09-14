@@ -358,4 +358,4 @@
     
 #}  #Fechamento da Função Principal
     
-#plot(matCalcPrazo[,"zTotal"],matCalc[,"Total"])
+plot(matCalcPrazo[,"zTotal"],matCalc[,"Total"])
