@@ -14,6 +14,9 @@ Repo usado para documentar a cadeira de Análise de Risco.
 * [Probabilidade] (http://www.portalaction.com.br/probabilidades)
 * [IFM] (https://github.com/afcosta-ibm/ifm)
 
+## Instalação do XLConnect
+install.packages("XLConnect", dependencies=TRUE)
+
 ## Grupos de Trabalho
 * Grupo 1
   * Alexandre Filgueiras Costa
