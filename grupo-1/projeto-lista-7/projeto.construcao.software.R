@@ -11,7 +11,8 @@
 #' 
 #' R1 - Primeiro Retrabalho :: rtriangle(NumberOfSamples, 2, 5, 3)
 #' R2 - Segundo Retrabalho :: rtriangle(NumberOfSamples, 1, 3, 1)
-#' TSPOS - Teste de sistema pos retrabalho :: rtriangle(NumberOfSamples, 1, 3, 1)
+#' TSR1 - Teste de sistema pos retrabalho 1 :: rtriangle(NumberOfSamples, 1, 3, 1)
+#' TSR2 - Teste de sistema pos retrabalho 2 :: rtriangle(NumberOfSamples, 1, 3, 1)
 
 library(triangle)
 library(igraph)
@@ -25,48 +26,56 @@ projeto.construcao.software <- projeto_construcao_software <-
   
   print(' montando os dados de prazo de todas as atividades ')
 
-  # monta as linhas da matriz com os nomes corretos
+  # monta as colunas da matriz com os nomes corretos
   colunasMatrizAtividades <- c("PS", "PM1", "PM2", "PM3", "PM4", "CM1", "CM2"
                                ,"CM3", "CM4", "TM1", "TM2", "TM3", "TM4", "I"
-                               ,"TS", "TA", "R1", "R2", "TSPOS")
+                               ,"TS", "TA", "R1", "TSR1", "R2", "TSR2", "FIM",
+                               "EVR1", "EVR2")
   
   # inicializa a matriz de custos
-  matrizPrazos <- matrix(nrow=NumberOfSamples, ncol=19,
+  matrizCenarios <- matrix(nrow=NumberOfSamples, ncol=23,
                          dimnames = list(1:NumberOfSamples, 
                                          colunasMatrizAtividades))
 
-  for(i in 1:NumberOfSamples){
-    # PS
-    matrizPrazos[,1] <- rtriangle(NumberOfSamples, 4, 7, 5)
-    # PM1, PM2, PM3, PM4
-    matrizPrazos[,2] <- rtriangle(NumberOfSamples, 2, 5, 2.5)
-    matrizPrazos[,3] <- rtriangle(NumberOfSamples, 2, 5, 2.5)
-    matrizPrazos[,4] <- rtriangle(NumberOfSamples, 2, 5, 2.5)
-    matrizPrazos[,5] <- rtriangle(NumberOfSamples, 2, 5, 2.5)
-    # CM1, CM2, CM3, CM4
-    matrizPrazos[,6] <- rtriangle(NumberOfSamples, 4, 6.5, 5)
-    matrizPrazos[,7] <- rtriangle(NumberOfSamples, 4, 6.5, 5)
-    matrizPrazos[,8] <- rtriangle(NumberOfSamples, 4, 6.5, 5)
-    matrizPrazos[,9] <- rtriangle(NumberOfSamples, 4, 6.5, 5)
-    # TM1, TM2, TM3, TM4
-    matrizPrazos[,10] <- rtriangle(NumberOfSamples, 1.5, 3, 2)
-    matrizPrazos[,11] <- rtriangle(NumberOfSamples, 1.5, 3, 2)
-    matrizPrazos[,12] <- rtriangle(NumberOfSamples, 1.5, 3, 2)
-    matrizPrazos[,13] <- rtriangle(NumberOfSamples, 1.5, 3, 2)
-    # I
-    matrizPrazos[,14] <- rtriangle(NumberOfSamples, 4, 7, 5)
-    # TS
-    matrizPrazos[,15] <- rtriangle(NumberOfSamples, 2, 5, 2)
-    # TA
-    matrizPrazos[,16] <- rtriangle(NumberOfSamples, 1, 7, 1)
-    # R1
-    matrizPrazos[,17] <- rtriangle(NumberOfSamples, 2, 5, 3)
-    # R2
-    matrizPrazos[,18] <- rtriangle(NumberOfSamples, 1, 3, 1)
-    # TSPOS
-    matrizPrazos[,19] <- rtriangle(NumberOfSamples, 1, 3, 1)
-  }
-
-  return (matrizPrazos)
+  # PS
+  matrizCenarios[,1] <- rtriangle(NumberOfSamples, 4, 7, 5)
+  # PM1, PM2, PM3, PM4
+  matrizCenarios[,2] <- rtriangle(NumberOfSamples, 2, 5, 2.5)
+  matrizCenarios[,3] <- rtriangle(NumberOfSamples, 2, 5, 2.5)
+  matrizCenarios[,4] <- rtriangle(NumberOfSamples, 2, 5, 2.5)
+  matrizCenarios[,5] <- rtriangle(NumberOfSamples, 2, 5, 2.5)
+  # CM1, CM2, CM3, CM4
+  matrizCenarios[,6] <- rtriangle(NumberOfSamples, 4, 6.5, 5)
+  matrizCenarios[,7] <- rtriangle(NumberOfSamples, 4, 6.5, 5)
+  matrizCenarios[,8] <- rtriangle(NumberOfSamples, 4, 6.5, 5)
+  matrizCenarios[,9] <- rtriangle(NumberOfSamples, 4, 6.5, 5)
+  # TM1, TM2, TM3, TM4
+  matrizCenarios[,10] <- rtriangle(NumberOfSamples, 1.5, 3, 2)
+  matrizCenarios[,11] <- rtriangle(NumberOfSamples, 1.5, 3, 2)
+  matrizCenarios[,12] <- rtriangle(NumberOfSamples, 1.5, 3, 2)
+  matrizCenarios[,13] <- rtriangle(NumberOfSamples, 1.5, 3, 2)
+  # I
+  matrizCenarios[,14] <- rtriangle(NumberOfSamples, 4, 7, 5)
+  # TS
+  matrizCenarios[,15] <- rtriangle(NumberOfSamples, 2, 5, 2)
+  # TA
+  matrizCenarios[,16] <- rtriangle(NumberOfSamples, 1, 7, 1)
+  # R1
+  matrizCenarios[,17] <- rtriangle(NumberOfSamples, 2, 5, 3)
+  # TSR1
+  matrizCenarios[,18] <- rtriangle(NumberOfSamples, 1, 3, 1)
+  # R2
+  matrizCenarios[,19] <- rtriangle(NumberOfSamples, 1, 3, 1)
+  # TSR2
+  matrizCenarios[,20] <- rtriangle(NumberOfSamples, 1, 3, 1)
+  # FIM
+  matrizCenarios[,21] <- 0
+  
+  # sorteio o retrabalho 1 onde o sorteio "1 = com retrabalho"
+  matrizCenarios[,22] <- rbinom(n = NumberOfSamples, size = 1, prob = 0.3)
+  # sorteio o retrabalho 2 onde o sorteio "1 = com retrabalho"
+  matrizCenarios[,23] <- rbinom(n = NumberOfSamples, size = 1, prob = 0.05)
+  
+  return (matrizCenarios)
   
 }

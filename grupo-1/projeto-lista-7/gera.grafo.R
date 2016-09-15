@@ -23,15 +23,20 @@ gera.grafo <- gera_grafo <- geraGrafo <- function(){
   #' TS - Teste do Sistema
   caminhosTS <- c(15,16)
   #' TA - Teste de Aceitacao
-  caminhosTA <- c(16,17, 16,19)
+  caminhosTA <- c(16,17, 16,21)
   #' R1 - Retrabalho 1
-  caminhosR1 <- c(17,18, 17,19)
+  caminhosR1 <- c(17,18)
+  #' TSR1 - Teste de Sistema do Retrabalho 1
+  caminhosTSR1 <- c(18,19, 18,21)
   #' R2 - Retrabalho 2
-  caminhosR2 <- c(18,19)
-
+  caminhosR2 <- c(19,20)
+  #' TSR1 - Teste de Sistema do Retrabalho 2
+  caminhosTSR2 <- c(20,21)
+  
   #' concatena os nos para montar os vertices
   edgesG <- c(caminhosPS, caminhosPM, caminhosCM, caminhosTM, caminhosI,
-              caminhosTS, caminhosTA, caminhosR1, caminhosR2) 
+              caminhosTS, caminhosTA, caminhosR1, caminhosTSR1, caminhosR2, 
+              caminhosTSR2)
 
   #' monta o grafo
   G <- make_graph(edges = edgesG, directed = T)
@@ -44,8 +49,8 @@ gera.grafo <- gera_grafo <- geraGrafo <- function(){
        vertex.color="blue", 
        edge.arrow.size=0.1)
 
-  #' lista todos os caminhos do grafo de 1 .. 19
-  caminhos <- all_simple_paths(graph = G, from = 1, to = 19)
+  #' lista todos os caminhos do grafo de 1 .. 21
+  caminhos <- all_simple_paths(graph = G, from = 1, to = 21)
 
   #' printa os caminhos
   print(caminhos)

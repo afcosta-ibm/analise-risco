@@ -14,7 +14,8 @@ library(igraph)
 source("grupo-1/projeto-lista-7/projeto.construcao.software.R")
 source("grupo-1/projeto-lista-7/gera.grafo.R")
 
-matrizPrazos <- projetoConstrucaoSoftware(30)
+# recupera os cenarios de todos os prazos e os sorteios dos eventos
+matrizCenarios <- projetoConstrucaoSoftware(10)
 
-
+# recupera todos os caminhos do grafo
 caminhos <- geraGrafo()
