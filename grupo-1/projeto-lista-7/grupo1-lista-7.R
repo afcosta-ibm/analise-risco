@@ -1,4 +1,4 @@
-#' Lista no. 6 – Risco de custo e prazo
+#' Lista no. 7 – Risco de prazo com correlacao
 
 #' Grupo 1:
 #' Alexandre Filgueiras Costa
@@ -17,7 +17,14 @@ source("grupo-1/projeto-lista-7/gera.grafo.R")
 source("grupo-1/projeto-lista-7/excel.matrix.to.xls.R")
 
 # recupera os cenarios de todos os prazos e os sorteios dos eventos
-matrizCenarios <- projetoConstrucaoSoftware(3000)
+matrizCenarios <- projetoConstrucaoSoftware(10)
+
+# recupera todos os caminhos do grafo
+caminhos <- geraGrafo()
+
+matrizCaminhos <- matrix(data = caminhos, 
+                         nrow = length(caminhos), 
+                         dimnames = list(1:length(caminhos), c("CAMINHOS DO GRAFO")))
 
 # generate a formatted date-time to append on the file path
 date.time <- format(Sys.time(), "%Y-%m-%d-%H-%M")
@@ -28,9 +35,6 @@ nomeImagemGrafo <- "grupo-1/projeto-lista-7/plot-grafo.png"
 
 print(nomeArquivoXLS)
 
-excelMatrixToXls(matrizCenarios = matrizCenarios, 
-                 nomeArquivoImagemGrafo = nomeImagemGrafo,
-                 nomeArquivo = nomeArquivoXLS)
-
-# recupera todos os caminhos do grafo
-caminhos <- geraGrafo()
+excelMatrixToXls(matrizCenarios = matrizCenarios,
+                nomeArquivoImagemGrafo = nomeImagemGrafo,
+                caminhosGrafo = matrizCaminhos, nomeArquivo = nomeArquivoXLS)

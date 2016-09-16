@@ -53,7 +53,7 @@ gera.grafo <- gera_grafo <- geraGrafo <- function(){
   caminhos <- all_simple_paths(graph = G, from = 1, to = 21)
 
   #' printa os caminhos
-  print(caminhos)
+  # print(caminhos)
   
   return(caminhos)
 

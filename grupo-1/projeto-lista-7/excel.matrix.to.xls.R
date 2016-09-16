@@ -5,7 +5,7 @@
 require("XLConnect")
 
 excel.matrix.to.xls <- excel_matrix_to_xls <- excelMatrixToXls <- 
-  function(matrizCenarios, nomeArquivoImagemGrafo, nomeArquivo){
+  function(matrizCenarios, nomeArquivoImagemGrafo, caminhosGrafo, nomeArquivo){
   
   #creating an Excel workbook.
   workbook <- loadWorkbook(nomeArquivo, create = TRUE)
@@ -14,8 +14,14 @@ excel.matrix.to.xls <- excel_matrix_to_xls <- excelMatrixToXls <-
   createSheet(workbook, name = "cenarios")
   # graph sheet
   createSheet(workbook, name = "grafo")
+  # all_simple_paths sheet
+  createSheet(workbook, name = "caminhos-grafo")
+
+  # writing the caminhosGrafo into caminhos-grafo sheet 
+  writeWorksheet(workbook, caminhosGrafo, sheet = "caminhos-grafo", 
+                 startRow = 1, startCol = 1)
   
-  # writing the matrizCenarios into ifm-results sheet 
+  # writing the matrizCenarios into cenarios sheet 
   writeWorksheet(workbook, matrizCenarios, sheet = "cenarios", 
                  startRow = 1, startCol = 1)
   
