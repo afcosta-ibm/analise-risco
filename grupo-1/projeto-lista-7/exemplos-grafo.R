@@ -1,3 +1,5 @@
+library(igraph)
+
 #' monta o grafo
 G <- make_graph(c(1,2, 1,3, 2,4, 3,4, 3,5, 4,6, 5,7, 6,7), directed = T)
 
