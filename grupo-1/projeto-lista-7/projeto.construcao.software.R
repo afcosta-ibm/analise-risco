@@ -74,7 +74,7 @@ projeto.construcao.software <- projeto_construcao_software <-
   # sorteio o retrabalho 1 onde o sorteio "1 = com retrabalho"
   matrizCenarios[,22] <- rbinom(n = NumberOfSamples, size = 1, prob = 0.3)
   # sorteio o retrabalho 2 onde o sorteio "1 = com retrabalho"
-  matrizCenarios[,23] <- rbinom(n = NumberOfSamples, size = 1, prob = 0.05)
+  matrizCenarios[,23] <- rbinom(n = NumberOfSamples, size = 1, prob = matrizCenarios[,22] * 0.05)
   
   return (matrizCenarios)
   
