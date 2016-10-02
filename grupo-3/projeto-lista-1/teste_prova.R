@@ -1,0 +1,5 @@
+library(triangle)
+simulacao = rtriangle(30000,4,10,9)
+acumulada = ecdf(simulacao)
+plot (acumulada)
+abline(acumulada ~ simulacao, col="red")
